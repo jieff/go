@@ -1,5 +1,7 @@
 package main
 
+import "github.com/jieff/go/internal/entity"
+
 type Car struct {
 	Model string
 	Color string
@@ -7,12 +9,10 @@ type Car struct {
 
 func main() {
 
-	car := Car{
-		Model: "Ferrari",
-		Color: "Red",
+	order, err := entity.NewOrder("1", -10, 1)
+	if err != nil {
+		println(err.Error())
+	} else {
+		println(order.Id)
 	}
-
-	car.Model = "Fiat"
-
-	println((car.Model))
 }
