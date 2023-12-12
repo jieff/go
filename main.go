@@ -17,7 +17,16 @@ func main() {
 		v1.GET("/delete-account", deleteAccount)
 	}
 
-	router.Run(":3007")
+	//router.Run(":3007")
+
+	// Define o caminho para o certificado e a chave
+	certFile := "/etc/letsencrypt/live/dlist.com.br/fullchain.pem"
+	keyFile := "/etc/letsencrypt/live/dlist.com.br/privkey.pem"
+
+	// Roda o servidor usando TLS
+	if err := router.RunTLS(":3007", certFile, keyFile); err != nil {
+		panic(err)
+	}
 
 }
 
