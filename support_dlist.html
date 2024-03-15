@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suporte - Dlist</title>
+  <style>
+    *,
+    :after,
+    :before {
+      box-sizing: border-box;
+      border: 0 solid #000;
+    }
+
+    @media (min-width: 1280px) .container {
+      max-width: 1280px;
+    }
+
+    @media (min-width: 1024px) .container {
+      max-width: 1024px;
+    }
+
+    @media (min-width: 768px) .container {
+      max-width: 768px;
+    }
+
+    @media (min-width: 640px) .container {
+      max-width: 640px;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      line-height: inherit;
+    }
+
+    menu,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: list-item;
+      text-align: match-parent;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+
+    .counter-list:before {
+      content: counters(item, ".") ". ";
+      counter-increment: item;
+      position: absolute;
+      left: -44px;
+    }
+
+    .content ol {
+      counter-reset: item;
+      margin-top: 1.25rem;
+    }
+
+    .content ol li {
+      position: relative;
+      display: block;
+      text-indent: 2.5rem;
+      margin-top: 10px;
+    }
+
+    .input-container {
+      width: 100%;
+    }
+
+    .input-container ul {
+      display: flex;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .input-container label {
+      width: 25%;
+      padding-right: 1rem;
+      text-indent: 0;
+    }
+
+    .input-container .styled-input {
+      width: 100%;
+    }
+
+    .styled-input {
+      flex: 1;
+      border-radius: 6px;
+      border: 1px solid #000;
+      background: #fff;
+      color: #000;
+      padding: 1rem;
+    }
+
+    .styled-input::placeholder {
+      color: #000;
+      font-size: 0.75rem;
+    }
+
+    .counter-list div:not(.button-container) {
+      flex: 1;
+      margin: 0;
+      padding: 0;
+      text-indent: 0;
+    }
+
+    .input-info {
+      font-size: 0.85rem;
+      font-weight: bold;
+      line-height: 2px;
+      color: #000;
+      opacity: 0.6;
+    }
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 2rem;
+    }
+
+    .styled-button {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border: 0;
+      padding: 1rem 4rem;
+      background: #000;
+      border: 1px solid #000;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .styled-button:hover {
+      background: #fff;
+      border-color: #000;
+      color: #000;
+      transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="section" style="display: flex; justify-content: center; padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="container" style="flex-direction: column; width: 736px">
+        <h1 class="title"
+          style="margin-bottom: 2.5rem; max-width: 582px; font-size: 32px; font-weight: 700; line-height: 60px; color: #000;">
+          Suporte - Dlist
+        </h1>
+        <div c text-align: justify; font-size: 1.125rem; line-height: 1.75rem; line-height: 2; ">
+          <p>
+            Bem-vindo à nossa página de suporte. Estamos aqui para ajudar você da melhor maneira possível. Se precisar
+            de assistência ou tiver alguma dúvida, por favor, entre em contato conosco:
+          </p>
+          <ol>
+            <li class=" counter-list">
+          <span>Envie um E-mail</span>
+          <p>
+            Para entrar em contato com nossa equipe de suporte, envie um e-mail para
+            <strong>suporte.dlist@gmail.com</strong>, utilizando o formulário abaixo.
+          </p>
+          </li>
+          <li class="counter-list">
+            <span>Inclua as Informações Necessárias</span>
+
+
+
+
+
+
+
+
+            <form id="support-form" action="https://dlist.com.br:3005/support_dlist" method="post">
+              <div class="input-container">
+                <ul>
+                  <label for="full-name">Nome Completo:</label>
+                  <input type="text" id="full-name" name="name" class="styled-input" placeholder="Digite seu nome"
+                    required />
+                </ul>
+                <ul>
+                  <label for="contact-email">E-mail:</label>
+                  <div>
+                    <input type="email" id="contact-email" name="email" class="styled-input" placeholder="meu@email.com"
+                      required />
+                    <p class="input-info">* Informe o mesmo e-mail utilizado no cadastro do aplicativo.</p>
+                  </div>
+                </ul>
+                <ul>
+                  <label for="phone-number">Número de Telefone:</label>
+                  <input type="tel" id="phone-number" name="subject" class="styled-input"
+                    placeholder="(99) 99999-9999" required />
+                </ul>
+                <ul>
+                  <label for="issue-description">Problema ou Dúvida:</label>
+                  <textarea id="issue-description" name="content" class="styled-input styled-textarea" rows="4"
+                    placeholder="Digite aqui sua descrição do problema ou dúvida..." required></textarea>
+                </ul>
+              </div>
+              <div class="button-container">
+                <button type="submit" class="styled-button">Enviar</button>
+              </div>
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+          </li>
+          <li class="counter-list">
+            <span>Detalhes Importantes</span>
+            <p>
+              Certifique-se de incluir informações detalhadas sobre o problema ou dúvida que você está enfrentando.
+              Isso nos ajudará a responder de forma mais eficiente.
+            </p>
+          </li>
+          </ol>
+        </div>
+        <div class="content" style="margin-top: 4rem">
+          <p style="padding-left: 2.5rem; font-size: 18px">Atenciosamente,</p>
+          <p style="
+                margin-top: 2rem;
+                padding-left: 2.5rem;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 12px;
+                color: #000;
+              ">
+            A Equipe Dlist
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script>
+    document.getElementById("support-form").addEventListener("submit", async function(event) {
+      event.preventDefault(); // Previne o envio padrão do formulário
+      
+      // Coleta os valores dos campos do formulário
+      const name = document.getElementById("full-name").value;
+      const email = document.getElementById("contact-email").value;
+      const subject = document.getElementById("phone-number").value;
+      const content = document.getElementById("issue-description").value;
+
+      // Monta o objeto com os dados do formulário
+      const formData = {
+        name: name,
+        email: email,
+        subject: subject,
+        content: content
+      };
+
+      // Envia a requisição POST com JSON no corpo (body)
+      const response = await fetch("https://dlist.com.br:3005/support_dlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      // Verifica se a requisição foi bem-sucedida
+      if (response.ok) {
+        // Limpa os campos do formulário após o envio
+        document.getElementById("support-form").reset();
+        // Exibe uma mensagem de sucesso ou redireciona o usuário
+      } else {
+        // Trata erros de requisição, exibe uma mensagem de erro ou toma outra ação adequada
+      }
+    });
+  </script>
+
+</body>
+
+</html>

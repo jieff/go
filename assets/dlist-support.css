@@ -1,0 +1,122 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  border: 0 solid #000;
+}
+@media (min-width: 1280px) .container {
+  max-width: 1280px;
+}
+@media (min-width: 1024px) .container {
+  max-width: 1024px;
+}
+@media (min-width: 768px) .container {
+  max-width: 768px;
+}
+@media (min-width: 640px) .container {
+  max-width: 640px;
+}
+body {
+  background-color: #fff;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  line-height: inherit;
+}
+menu,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: list-item;
+  text-align: match-parent;
+}
+span {
+  text-transform: uppercase;
+}
+.counter-list:before {
+  content: counters(item, ".") ". ";
+  counter-increment: item;
+  position: absolute;
+  left: -44px;
+}
+.content ol {
+  counter-reset: item;
+  margin-top: 1.25rem;
+}
+.content ol li {
+  position: relative;
+  display: block;
+  text-indent: 2.5rem;
+  margin-top: 10px;
+}
+.input-container {
+  width: 100%;
+}
+.input-container ul {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.input-container label {
+  width: 25%;
+  padding-right: 1rem;
+  text-indent: 0;
+}
+.input-container .styled-input {
+  width: 100%;
+}
+.styled-input {
+  flex: 1;
+  border-radius: 6px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+}
+.styled-input::placeholder {
+  color: #000;
+  font-size: 0.75rem;
+}
+.counter-list div:not(.button-container) {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+}
+.input-info {
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 2px;
+  color: #000;
+  opacity: 0.6;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}
+.styled-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 0;
+  padding: 1rem 4rem;
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.styled-button:hover {
+  background: #fff;
+  border-color: #000;
+  color: #000;
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+}
